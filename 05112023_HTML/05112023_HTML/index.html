@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <!-- Özel Karakterler-->
+    <!--
+        Bazı karakterler HTML dilinde çeşitli anlamlara gelmektedir
+        Örneğin "<" karakteri bir HTML kodunun başladığını ifade eder.Fakat bu ifadeyi düz metin içerisinde yazmak istediğimizde bazı sorunlar ile karşılaşabiliriz
+
+        Bu tarz durumlar için yazılacak olan özel ifadelerin yerine farklı komutlar kullanmalıyız
+
+        HTML kodu içerisinde & veya # ifadesi ile başlayıp ; ile biten komutlar özel ifadeleri içermektedir
+
+        HTML içerisinde kullanılan bazı özel ifadeler ve tanımları
+        - Boşluk     Boşluk vermeye yarar        &nbsp;
+        - <          Küçüktür işareti            &lt;
+        - >          Büyüktür işareti            &gt;
+        - "          Tırnak işareti              &quot;
+        - '          Ayıraç işareti              &#39;
+        - &          Ve işareti                  &amp;
+        -            Registar işareti            &reg;
+        -            Copyright işareti           &copy;
+        ...
+
+        Yukarıda belirtilen şekilde özel karakter tanımlaması yapılmaktadır.Buna benzer çok sayıda özel karakter tanımlaması vardır.Bu özel karakterlerin tanımı "HTML Entities" olarak geçmektedir
+    -->
+    <h1>Özel Karakterler</h1>
+    <p>
+        <b>Küçüktür: </b> &lt; <br />
+        <b>Büyüktür: </b> &gt; <br />
+        <b>Ve: </b> &amp; <br />
+        <b>Registar:</b> &reg; <br />
+        <b>Copyright: </b> &copy; <br />
+        <b>Boşluk&nbsp;Karakteri</b>
+    </p>
+    <!-- BAĞLANTILAR -->
+    <!--
+        Tüm web sitelerinde bağlantılar yani linkler bulunmaktadır.Bağlantılar web stielerinde olmazsa olmazıdır.Herhangi bir sayfadan diğer bir sayfaya geçiş yapmak istediğinizde link kurmanız gerekmektedir ve bu bağlantının nasıl oluşturulup nasıl kullanılacağını bilmeniz gerekmektedir
+
+        HTML dilinde link oluşturma işlemi <a> ......<a/> etiketleri ile yapılmaktadır . Bu a tagları içerisinde belirtilen metin veya görsel ifade bağlantıya sahip olup mouse ile tıklandığında bir diğer sayfaya yönlendirme işlemini sağlar
+
+        a etiketi içerisinde kullanılan 1 adet property bulunmaktadır
+
+        - href: hedef sayfanın veya url bilgisi yazılır
+        - target; sayfanın hangi türde açılacağı belirtilir.Target propertysi kendi içierisnde 4 farklı değer içermektedir
+        - _blank:Bağlantının yeni sekmede açılmasını sağlar
+        - _self:Bağlantının aynı pencerede açılmasını sağlar.(Default)
+        - _top:Bağlantının aynı pencere içerisinde üstten açılmasını sağlar
+        - _parent:Bağlantının ana çerçevede açılmasını sağlar
+
+        Not: a teiketi iöçerisinde href kullanım zorunluluğu bulunmaktadır.Yönleneceği sayfa belirtilmez ise o etiket bağlantı oluşturamaz.Target etiketi opsiyoneldir
+
+        Syntax:
+        <a href="bağlantı adersi" target="açılma türü"> metin|resim<a/>
+
+
+    -->
+    <h1>Bağlantılar</h1>
+    <p>
+        Site içi yönlendirme işlemi :
+        <a href="sayfa2.html">2.Sayfaya Git </a>
+    </p>
+
+    <p>
+        Sayfa dışı yönlendirme :
+        <a href="https://www.google.com">Google</a>
+    </p>
+
+    <p>
+        Site dışı yönlendirme yeni pencerede açma işlemi :
+        <a href="https://www.google.com" target="_blank"> Google 2 </a>
+    </p>
+    <hr />
+    <!-- Listeleme -->
+    <!--
+        Listeleme işlemini belirli maddelerin alt alta yazılarak sıra , harf veya işaretle belirli bir düzen içerisinde yazılmasına denir
+
+        HTML , dilinde listeleme işlemi web sitemize bulunan içeriğin düzgün ve anlaşılır bir biçimde görüntülenmesini sağlamak için kullanılır
+
+
+        HTML dilinde listeleme işlemleri 3farklı şekilde kullanılır
+        - Sıralı Liste(Ordered List)
+        - Sırasız Liste (Unordered List)
+        - İç içe listeleme
+
+
+        Sıralı Liste (Ordered List)
+        ----------------------------
+        HTML dilinde sıralı listeleme belirli bir düzen içinde artan sayı , harf veya roma rakamı ile oluşturulan listeleme şeklidir
+
+        SIralı liste oluşturmak için <ol>....</ol> etiketi içerisinde <li>.....</li> etiketlerinin içerisine yazılmış olan metin veya görseller kullanılır
+
+    -->
+    <h1> Sıralı Liste </h1>
+    <ol>
+        <li>Sıralı Madde</li>
+        <li>Sıralı Madde</li>
+        <li>Sıralı Madde</li>
+        <li>Sıralı Madde</li>
+    </ol>
+
+    <!--
+        Sıralı liste default  oalrak "1" sayısından başlayarak kaç adet madde var ise o sayı kadar artarak ilerler
+
+        Sıralı liste içerisinde "type" parametresi  kullanımı:
+        - 1: Rakam ile başlayacağını belirtir
+        - A: Büyük harf ile başlayacağını ifade eder
+        - a: Küçük harf ile başlayacağını ifade eder
+        - I: Büyük roma rakamı ile başlayacağını ifade eder
+        - i: Küçük roma rakamı ile başlayacağını ifade eder
+    -->
+    <h1> Type özelliği tanımlanmış sıralı liste </h1>
+    <ol type="a">
+        <li>Sıralı Liste</li>
+        <li>Sıralı Liste</li>
+        <li>Sıralı Liste</li>
+        <li>Sıralı Liste</li>
+        <li>Sıralı Liste</li>
+    </ol>
+    <!-- Sırasız Liste-->
+    <!--
+        HTML dilinde sırasız liste işlemi maddelerin şekil ,simge gibi işaretlerle lat alta yzdırmak için kullanılır.Sırasız liste işlemleri için <ul>....</ul>
+    -->
+    <h1> Sırasız Liste </h1>
+    <ul>
+        <li>Sırasız Madde</li>
+        <li>Sırasız Madde</li>
+        <li>Sırasız Madde</li>
+        <li>Sırasız Madde</li>
+        <li>Sırasız Madde</li>
+    </ul>
+
+    <!--
+            Sırasız listelerde "type" parametresinin aldığı bazı özellikler:
+        - disc: İçi dolu daire(Deafult)
+        - circle:İçi  boş daire
+        - square:içi dolu kare
+        ...
+
+     -->
+    <h1> Type Özelliği olan Sırasız Liste</h1>
+    <ul type="square">
+        <li>Sırasız Madde</li>
+        <li>Sırasız Madde</li>
+        <li>Sırasız Madde</li>
+        <li>Sırasız Madde</li>
+        <li>Sırasız Madde</li>
+        <li>Sırasız Madde</li>
+        <li>Sırasız Madde</li>
+        <li>Sırasız Madde</li>
+    </ul>
+
+    <!--
+        İç içe listeleme
+        ----------------
+        HTML dilinde iç içe listeleme işlemi birden fazla liste etiketi kullanılarak oluşturulmaktadır
+        İç içe listelemeye kategori olarak listeleme adı da verilmektedir
+        İç içe listeleme yaparken sıralı veya sırasız listeler bir arada kullanılabilir
+
+
+    -->
+    <h1> İç içe Listeleme </h1>
+    <ol>
+        <li>
+            C# Temel Konular
+            <ul>
+                <li>
+                    Veri Tipleri
+                    <ol>
+                        <li>Char</li>
+                        <li>String</li>
+                        <li>int</li>
+                        <li>double</li>
+                        <li>boolean</li>
+                    </ol>
+                </li>
+            </ul>
+
+        </li>
+        <li> Sql Temel Konuları</li>
+        <li> Windows Form Application</li>
+    </ol>
+
+    <!--
+        Tablolar
+        -----------
+        HTML ile hazırlanan web sitelerinde belirli bir metine veya listeye düzen sağlamak için tablo yapısını kullanırız
+
+        Html dilinde tablo eklemek için <table>....</table> tagı kullanılırız.Tablo içerisinde tnaımlanacak olan tüm elemanlar bu etiketlerin arasında yazılmalıdır
+        Tablo içerisinde kullanılan tagler;
+        - <tr></tr> : Tablo içerisinde satır oluşturmak için kullanılır
+        - <td></td> : Tablo içerisinde sütun oluşturmak için kullanılır
+        -<th></th>  :Tablo içerisindeki satırlarda başlık sütunu oluşturmak için kullanılır.<tr> etiketi içerisinde kullanılır
+
+
+        Table etiketi içerisinde kullanılan parametreler
+        -Width : Tablonun veya hücrenin genişliğini belirtir
+        -Height :Tablonun veya hücrenin yüksekliğini belirtir
+        -Border : Tabloya çerçeve ekler
+        -CellPadding : Her bir hücrenin iç boşluğunu belirtir
+        -CellSpacing : Her bir hücrenin arasındaki boşluğu belirtir
+        -Bgcolor     : Tablo veya hücrenin arkaplan rengini değiştirir
+        -ColSpawn    : Tabloda bulunan aynı satırdaki hücreleri birleştirmek için kullanılır
+        -RowSpawn    : Tabloda bulunan aynı sütundaki hücreleri birleştirmek için kullanılır
+        -Align       : Hücre içerisindek metin veya görselin yatay hizalamasını yapar
+        -Valign      :Hücre içerisindek metin veya görselin dikey hizalamasını yapar
+
+        Örnek : 3 satır ve 3 sütunluk bir tablo oluşturalım
+    -->
+    <font align="center"> <h1> Tablo </h1></font>
+
+    <table border="1" height="150" align="center" bgcolor="#485641">
+        <tr>
+            <td>Başlık Sütunu 1</td>
+            <td>Başlık Sütunu 2</td>
+            <td>Başlık Sütunu 3</td>
+        </tr>
+        <tr>
+            <td align="left" valign="top">  Sütun içeriği 1   </td>
+            <td align="right" valign="middle">  Sütun içeriği 2</td>
+            <td align="center" valign="bottom">Sütun içeriği 3</td>
+        </tr>
+        <tr>
+            <td> Sutün İçeriği 1</td>
+            <td> Sutün İçeriği 2</td>
+            <td> Sutün İçeriği 3</td>
+        </tr>
+    </table>
+
+    <!-- Ürün Adı , Miktar ve Fiyat bilgileri listeleyen en alt satırda da toplam miktarı gösteren bir tablo oluşturalım-->
+    <table border="1" align="center" width="500">
+        <tr>
+           <th colspan="3">Ürünler</th>
+        </tr>
+        <tr>
+            <th>Ürün Adı</th>
+            <th>Miktar</th>
+            <th>Fiyat</th>
+        </tr>
+        <tr>
+            <td align="center">Elma</td>
+            <td align="center">3 Kg</td>
+            <td align="center">20</td>
+        </tr>
+        <tr>
+            <td align="center">Armut</td>
+            <td align="center">5 kg</td>
+            <td align="center">30</td>
+
+        </tr>
+        <tr>
+            <td align="center">Karpuz</td>
+            <td align="center">5 Kg</td>
+            <td align="center">20</td>
+
+        </tr>
+        <tr>
+            <th colspan="2">Toplam</th>
+            <th>70</th>
+        </tr>
+    </table>
+    
+</body>
+</html>
